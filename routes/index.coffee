@@ -8,5 +8,6 @@ exports.index = (req, res) ->
 # GET WvW page
 exports.wvw = (req, res) ->
 	res.render "wvw",
+		layout: false
 		title: "Mapa World vs World"
 		desc: "Mapa"

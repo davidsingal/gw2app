@@ -1,0 +1,16 @@
+/* TEAM */
+  Developer: David Inga
+  Twitter: @davidsingal
+  Location: Madrid, Spain
+  
+  Geospacial: Alicia Arenzana
+  Twitter: @AliGM
+  Location: Madrid, Spain
+
+/* THANKS */
+  Names (& URL): CartoDB (http://www.cartodb.com)
+
+/* SITE */
+  Standards: HTML5, CSS3, Node Js
+  Components: Modernizr, jQuery, Express Js, Coffeescript, Stylus, Jade
+  Software: Fireworsk, Coda2, Textmate, ArGIS

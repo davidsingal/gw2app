@@ -4,30 +4,42 @@ html(lang="es")
 		meta(charset="utf-8")
 		title= title + " | Aplicaciones web para GW2"
 		meta(name="description", content=desc)
-		meta(name="viewport", content="width=device-width")
+		//Mobile
+		
+		meta(name="viewport", content="width=1024")
+		
+		//CSS
+		link(rel="stylesheet", href="/stylesheets/normalize.css")
+		block stylesheets
 		link(rel="stylesheet", href="/stylesheets/main.css")
+		
+		//Modernizr
 		script(src="/javascripts/vendor/modernizr-2.5.3.min.js")
 	body
 		block header
 			header(class="main_header")
 				h1 Mapa WvW
-				nav
+				nav(class="main_nav")
+					h1
+						a(href="/") GW2 App
 					ul
-						li
-							a(href="#") GW2 App
-						li
-							a(href="#") Mapa WvW
+						li 
+							a(href="/wvw") Mapa WvW
 		
-		block main
-			div(role="main", class="main_content")!= body
+		div(role="main", class="main_content")
+			block content
 			
 		block footer
 			footer(class="main_footer")
 				p
 					a(href="mailto:undakel@gmail.com") Contacto
-					a(href="http://") Colabora
+					|  · 
+					a(href="https://github.com/davidsingal/gw2app", target="_blank") Colabora
 		
-		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+		//Scripts
+		block javascripts
 		script
-			window.jQuery || document.write("<script src=\"js/libs/jquery-1.7.1.min.js\"><\\/script>")
-		script(src="/javascripts/main.js")
+			var _gaq=[['_setAccount','UA-32899153-1'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));

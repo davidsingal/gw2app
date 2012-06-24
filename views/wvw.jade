@@ -1,0 +1,21 @@
+extends layout
+
+block stylesheets
+	link(rel="stylesheet", href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css")
+	<!--[if lt IE 9]>link(rel="stylesheet", href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.cs")<![endif]-->
+	link(rel="stylesheet", href="/stylesheets/cartodb-leaflet.css")
+
+block content
+	div(id="map", class="full_map")
+	canvas(id="canvas", class="draw_canvas")
+		p(class="disclaimer") Parece que tu navegador no soporta Canvas, prueba con Chrome :)
+	
+block javascripts
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+	script
+		window.jQuery || document.write("<script src=\"js/libs/jquery-1.7.1.min.js\"><\\/script>")
+	script(src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js")
+	script(src="/javascripts/vendor/wax.leaf.min-6.2.3-touched.js")
+	script(src="/javascripts/vendor/cartodb-leaflet-min.js")
+	script(src="/javascripts/vendor/cartodb-popup-min.js")
+	script(src="/javascripts/main.js")
