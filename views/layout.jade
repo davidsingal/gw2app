@@ -1,0 +1,33 @@
+!!!
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title= title + " | Aplicaciones web para GW2"
+		meta(name="description", content=desc)
+		meta(name="viewport", content="width=device-width")
+		link(rel="stylesheet", href="/stylesheets/main.css")
+		script(src="/javascripts/vendor/modernizr-2.5.3.min.js")
+	body
+		block header
+			header(class="main_header")
+				h1 Mapa WvW
+				nav
+					ul
+						li
+							a(href="#") GW2 App
+						li
+							a(href="#") Mapa WvW
+		
+		block main
+			div(role="main", class="main_content")!= body
+			
+		block footer
+			footer(class="main_footer")
+				p
+					a(href="mailto:undakel@gmail.com") Contacto
+					a(href="http://") Colabora
+		
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+		script
+			window.jQuery || document.write("<script src=\"js/libs/jquery-1.7.1.min.js\"><\\/script>")
+		script(src="/javascripts/main.js")
