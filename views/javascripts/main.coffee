@@ -16,7 +16,7 @@ cartoDB =
 		
 		bounds = new L.LatLngBounds southWest, northEast
 		
-		tiles = new L.TileLayer "/images/maps/wvw/{z}/{x}/{y}.png",
+		tiles = new L.TileLayer "/images/maps/wvw/{z}/{x}/{y}.jpg",
 			minZoom: 16
 			maxZoom: 20
 		
@@ -55,7 +55,7 @@ cartoDB =
 		
 		#Events
 		map.on "moveend", (e)->
-			console.log map.getBounds()
+			#console.log map.getBounds()
 
 drawCanvas =
 	vars:
