@@ -16,15 +16,15 @@ cartoDB =
 		
 		bounds = new L.LatLngBounds southWest, northEast
 		
-		tiles = new L.TileLayer "/images/maps/wvw/16/{x}/{y}.jpg",
+		tiles = new L.TileLayer "/images/maps/wvw/{z}/{x}/{y}.png",
 			minZoom: 16
-			maxZoom: 19
+			maxZoom: 20
 		
 		map = new L.Map "map",
 			center: bounds.getCenter()
 			zoom: 16
 			minZoom: 16
-			maxZoom: 19
+			maxZoom: 20
 			maxBounds: bounds
 		
 		map.addLayer tiles, true
@@ -55,13 +55,36 @@ cartoDB =
 		
 		#Events
 		map.on "moveend", (e)->
-			#console.log bounds.getCenter()
+			console.log map.getBounds()
 
 drawCanvas =
+	vars:
+		canvas: $("canvas#canvas")
+		
 	init: ->
 		@.size()
+		@.showCanvas()
+		@.draw()
+		
 	size: ->
-		$("canvas#canvas").css "height", win.height() - 32
+		@.vars.canvas.css "height", win.height() - 32
+		
+	showCanvas: ->
+		$("a#drawButton").click (e)->
+			e.preventDefault()
+			self = @
+			drawCanvas.vars.canvas.stop().fadeToggle ->
+				$(self).toggleClass "active"
+	
+	draw: ->
+		canvas = document.getElementById "canvas"
+		context = canvas.getContext "2d"
+		if context
+			context.strokeStyle = "#000000"
+			context.lineWidth = 3
+			context.scale 1, 1
+			context.strokeRect 0, 0, canvas.width, canvas.height
+			context.stroke()
 
 
 #Document Ready

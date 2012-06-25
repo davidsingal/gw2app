@@ -16,8 +16,8 @@ html(lang="es")
 		//Modernizr
 		script(src="/javascripts/vendor/modernizr-2.5.3.min.js")
 	body
-		block header
-			header(class="main_header")
+		header(class="main_header")
+			block header
 				h1 Mapa WvW
 				nav(class="main_nav")
 					h1
@@ -28,9 +28,9 @@ html(lang="es")
 		
 		div(role="main", class="main_content")
 			block content
-			
-		block footer
-			footer(class="main_footer")
+		
+		footer(class="main_footer")
+			block footer
 				p
 					a(href="mailto:undakel@gmail.com") Contacto
 					|  · 

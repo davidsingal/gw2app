@@ -103,6 +103,22 @@ a:focus
 		opacity 1
 		transition(opacity .3s ease-in-out)
 
+.tools_nav
+	position absolute
+	top 0
+	right 2em
+	margin 0
+	padding 0
+	list-style none
+	li
+		a
+			display block
+			font-size 1.5em
+			line-height 32px
+			color blackColor
+			&.active
+				color redColor
+
 
 //Main Content
 .full_map, .draw_canvas
@@ -113,6 +129,7 @@ a:focus
 	height 100%
 
 .draw_canvas
+	display none
 	background url(/images/assets/bg_canvas.png)
 	z-index 1500
 
