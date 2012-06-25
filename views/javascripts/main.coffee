@@ -11,8 +11,8 @@ cartoDB =
 		$("div#map").css "height", win.height() - 32
 		
 	launch: ->
-		southWest = new L.LatLng -0.033142, 0
-		northEast = new L.LatLng 0, 0.047688
+		southWest = new L.LatLng 0, 0.047741
+		northEast = new L.LatLng -0.033179, -0.000004
 		
 		bounds = new L.LatLngBounds southWest, northEast
 		
@@ -58,8 +58,7 @@ cartoDB =
 			#console.log map.getBounds()
 
 drawCanvas =
-	vars:
-		canvas: $("canvas#canvas")
+	canvas: document.getElementById "canvas"
 		
 	init: ->
 		@.size()
@@ -67,36 +66,58 @@ drawCanvas =
 		@.draw()
 		
 	size: ->
-		@.vars.canvas.css "height", win.height() - 32
+		canvas = @.canvas
+		canvas.width = win.width()
+		canvas.height = win.height() - 32
 		
 	showCanvas: ->
+		canvas = @.canvas
 		$("a#drawButton").click (e)->
 			e.preventDefault()
 			self = @
-			drawCanvas.vars.canvas.stop().fadeToggle ->
+			$(canvas).stop().fadeToggle ->
 				$(self).toggleClass "active"
 	
 	draw: ->
+		canvas = @.canvas
 		canvas = document.getElementById "canvas"
+		canvas.width = window.innerWidth
+		canvas.height = window.innerHeight - 32
 		context = canvas.getContext "2d"
-		if context
-			context.strokeStyle = "#000000"
-			context.lineWidth = 3
-			context.scale 1, 1
-			context.strokeRect 0, 0, canvas.width, canvas.height
+		context.scale 1, 1
+		context.strokeStyle = "#000000"
+		context.lineWidth = 3
+		context.strokeRect 0, 0, canvas.width, canvas.height
+		lastX = 0
+		lastY = 0
+		
+		$(canvas).mousemove (e)->
+			if (lastX == 0)
+				lastX = e.pageX - canvas.offsetLeft
+			if (lastY == 0)
+				lastY = e.pageY - canvas.offsetTop
+				
+			context.beginPath()
+			context.moveTo lastX, lastY
+			
+			lastX = e.pageX - canvas.offsetLeft
+			lastY = e.pageY - canvas.offsetTop
+			
+			context.lineTo lastX, lastY
+			context.fillRect lastX, lastY, 2, 2
+			context.closePath()
 			context.stroke()
 
 
 #Document Ready
 $ ->
 	cartoDB.init()
-	drawCanvas.init()
-
 
 #Window Load
 win.load ->
 	cartoDB.launch()
 	drawCanvas.size()
+	drawCanvas.init()
 
 	
 #Window Resize
