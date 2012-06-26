@@ -89,25 +89,43 @@ drawCanvas =
 		context.strokeStyle = "#000000"
 		context.lineWidth = 3
 		context.strokeRect 0, 0, canvas.width, canvas.height
+		context.closePath()
+		
+		context.strokeStyle = "#ff0000"
+		
 		lastX = 0
 		lastY = 0
+		active = false
 		
-		$(canvas).mousemove (e)->
-			if (lastX == 0)
-				lastX = e.pageX - canvas.offsetLeft
-			if (lastY == 0)
-				lastY = e.pageY - canvas.offsetTop
-				
+		
+		$(canvas).mousedown (e)->
+			e.preventDefault()
+			paint(e)
 			context.beginPath()
 			context.moveTo lastX, lastY
+			active = true
+			
+			$(canvas).mousemove (e)->
+				if (active)
+					paint(e)
+					context.lineTo lastX, lastY
+					context.stroke()
+			
+		$(canvas).mouseup (e)->
+			e.preventDefault()
+			if (active)
+				paint(e)
+				active = false
+			
+		paint = (e)->
+			if (lastX == 0 or lastY == 0)
+				lastX = e.pageX - canvas.offsetLeft
+				lastY = e.pageY - canvas.offsetTop
 			
 			lastX = e.pageX - canvas.offsetLeft
 			lastY = e.pageY - canvas.offsetTop
 			
-			context.lineTo lastX, lastY
-			context.fillRect lastX, lastY, 2, 2
-			context.closePath()
-			context.stroke()
+			
 
 
 #Document Ready

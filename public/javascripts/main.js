@@ -79,7 +79,7 @@
       });
     },
     draw: function() {
-      var canvas, context, lastX, lastY;
+      var active, canvas, context, lastX, lastY, paint;
       canvas = this.canvas;
       canvas = document.getElementById("canvas");
       canvas.width = window.innerWidth;
@@ -89,24 +89,40 @@
       context.strokeStyle = "#000000";
       context.lineWidth = 3;
       context.strokeRect(0, 0, canvas.width, canvas.height);
+      context.closePath();
+      context.strokeStyle = "#ff0000";
       lastX = 0;
       lastY = 0;
-      return $(canvas).mousemove(function(e) {
-        if (lastX === 0) {
-          lastX = e.pageX - canvas.offsetLeft;
-        }
-        if (lastY === 0) {
-          lastY = e.pageY - canvas.offsetTop;
-        }
+      active = false;
+      $(canvas).mousedown(function(e) {
+        e.preventDefault();
+        paint(e);
         context.beginPath();
         context.moveTo(lastX, lastY);
-        lastX = e.pageX - canvas.offsetLeft;
-        lastY = e.pageY - canvas.offsetTop;
-        context.lineTo(lastX, lastY);
-        context.fillRect(lastX, lastY, 2, 2);
-        context.closePath();
-        return context.stroke();
+        active = true;
+        return $(canvas).mousemove(function(e) {
+          if (active) {
+            paint(e);
+            context.lineTo(lastX, lastY);
+            return context.stroke();
+          }
+        });
       });
+      $(canvas).mouseup(function(e) {
+        e.preventDefault();
+        if (active) {
+          paint(e);
+          return active = false;
+        }
+      });
+      return paint = function(e) {
+        if (lastX === 0 || lastY === 0) {
+          lastX = e.pageX - canvas.offsetLeft;
+          lastY = e.pageY - canvas.offsetTop;
+        }
+        lastX = e.pageX - canvas.offsetLeft;
+        return lastY = e.pageY - canvas.offsetTop;
+      };
     }
   };
 
