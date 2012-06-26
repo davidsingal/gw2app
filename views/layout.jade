@@ -2,7 +2,10 @@
 html(lang="es")
 	head
 		meta(charset="utf-8")
-		title= title + " | Aplicaciones web para GW2"
+		if title == "GW2 App"
+			title= "Bienvenido | GW2 App"
+		else
+			title= title + " | GW2 App"
 		meta(name="description", content=desc)
 		//Mobile
 		
@@ -15,10 +18,10 @@ html(lang="es")
 		
 		//Modernizr
 		script(src="/javascripts/vendor/modernizr-2.5.3.min.js")
-	body
+	body(class= bodyclass)
 		header(class="main_header")
 			block header
-				h1 Mapa WvW
+				h1= title
 				nav(class="main_nav")
 					h1
 						a(href="/") GW2 App

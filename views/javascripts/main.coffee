@@ -11,20 +11,20 @@ cartoDB =
 		$("div#map").css "height", win.height() - 32
 		
 	launch: ->
-		southWest = new L.LatLng 0, 0.047741
-		northEast = new L.LatLng -0.033179, -0.000004
+		southWest = new L.LatLng -0.033179, -0.000004
+		northEast = new L.LatLng 0.000004, 0.0477410
 		
 		bounds = new L.LatLngBounds southWest, northEast
 		
 		tiles = new L.TileLayer "/images/maps/wvw/{z}/{x}/{y}.jpg",
 			minZoom: 16
-			maxZoom: 20
+			maxZoom: 18
 		
 		map = new L.Map "map",
 			center: bounds.getCenter()
 			zoom: 16
 			minZoom: 16
-			maxZoom: 20
+			maxZoom: 18
 			maxBounds: bounds
 		
 		map.addLayer tiles, true
@@ -35,7 +35,8 @@ cartoDB =
 			map: map
 			user_name: "darkit"
 			table_name: "wvw"
-			query: "SELECT * FROM {{table_name}}"
+			#query: "SELECT * FROM {{table_name}}"
+			query: "SELECT cartodb_id, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}"
 			featureOver: (ev, latlng, pos, data) ->
 				document.body.style.cursor = "pointer"
 			

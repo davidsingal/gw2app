@@ -37,7 +37,8 @@ body
 	font-size 62.5%
 	font-family "CronosRegular", Helvetica, Arial, sans-serif
 	color blackColor
-	background blackColor
+	background whiteColor url(/images/assets/bg.jpg) top no-repeat
+	background-size cover
 	
 a:link, a:visited, a:active
 	color redColor
@@ -56,7 +57,7 @@ a:focus
 	right 0
 	height 32px
 	color blackColor
-	box-shadow(0 0 5px blackColor)
+	box-shadow(0 0 7px blackColor)
 	background whiteColor
 	z-index 1000
 	h1
@@ -151,8 +152,39 @@ a:focus
 		margin .5em 0
 	a
 		color whiteColor
-		text-shadow 0 0 3px blackColor
-		
+		text-shadow 1px 1px 3px blackColor
+
+
+//Home
+.home
+	.main_header
+		display none
+	.welcome
+		position relative
+		top 150px
+		left 50px
+		width 35%
+		min-height 400px
+		ul
+			margin 2.5em 0
+			padding-left 30px
+			list-style disc
+		li a
+			font-size 1.7em
+		.big
+			font-size 3.5em
+			margin 0
+		p
+			font-size 2.1em
+			margin .2em 0
+		footer
+			p
+				font-size 1.5em
+	.main_footer
+		a
+			color blackColor
+			text-shadow 1px 1px 3px whiteColor
+
 
 //Helpers
 .disclaimer

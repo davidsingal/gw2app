@@ -1,9 +1,9 @@
 @font-face{font-family:"CronosRegular";src:url("/fonts/cronos_display-webfont.eot");src:url("/fonts/cronos_display-webfont.eot?#iefix") format("embedded-opentype"),url("/fonts/cronos_display-webfont.woff") format("woff"),url("/fonts/cronos_display-webfont.ttf") format("truetype"),url("/fonts/cronos_display-webfont.svg#CronosRegular") format("svg");font-weight:normal;font-style:normal}
-body{font-size:62.5%;font-family:"CronosRegular",Helvetica,Arial,sans-serif;color:#222;background:#222}
+body{font-size:62.5%;font-family:"CronosRegular",Helvetica,Arial,sans-serif;color:#222;background:#fefefe url("/images/assets/bg.jpg") top no-repeat;background-size:cover}
 a:link,a:visited,a:active{color:#ff4000;text-decoration:none}
 a:hover{text-decoration:underline}
 a:focus{outline:none}
-.main_header{position:absolute;top:0;left:0;right:0;height:32px;color:#222;-webkit-box-shadow:0 0 5px #222;-moz-box-shadow:0 0 5px #222;box-shadow:0 0 5px #222;background:#fefefe;z-index:1000;}
+.main_header{position:absolute;top:0;left:0;right:0;height:32px;color:#222;-webkit-box-shadow:0 0 7px #222;-moz-box-shadow:0 0 7px #222;box-shadow:0 0 7px #222;background:#fefefe;z-index:1000;}
 .main_header h1{text-align:center;margin:0;font-size:2.3em;font-weight:normal}
 .main_nav{position:absolute;left:1.5em;top:0;}
 .main_nav h1{margin:0 .5em;font-size:1.7em;line-height:32px;padding-right:20px;background:url("/images/assets/sprite.png") no-repeat right;}
@@ -20,5 +20,13 @@ a:focus{outline:none}
 .draw_canvas{position:absolute;display:none;top:32px;left:0;background:url("/images/assets/bg_canvas.png");z-index:1500}
 .main_footer{position:absolute;right:0;left:0;bottom:0;font-size:1.3em;text-align:center;color:#fefefe;z-index:1000;}
 .main_footer p{margin:.5em 0}
-.main_footer a{color:#fefefe;text-shadow:0 0 3px #222}
+.main_footer a{color:#fefefe;text-shadow:1px 1px 3px #222}
+.home .main_header{display:none}
+.home .welcome{position:relative;top:150px;left:50px;width:35%;min-height:400px;}
+.home .welcome ul{margin:2.5em 0;padding-left:30px;list-style:disc}
+.home .welcome li a{font-size:1.7em}
+.home .welcome .big{font-size:3.5em;margin:0}
+.home .welcome p{font-size:2.1em;margin:.2em 0}
+.home .welcome footer p{font-size:1.5em}
+.home .main_footer a{color:#222;text-shadow:1px 1px 3px #fefefe}
 .disclaimer{position:absolute;top:45%;left:50%;width:300px;margin-left:-150px;padding:.2em .7em;color:#fefefe;background:#222}

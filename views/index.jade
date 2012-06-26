@@ -1,4 +1,19 @@
 extends layout
 
-block main
-	p Hola
+block header
+	
+
+block content
+	article(class="welcome")
+		header
+			h1(class="big")= title
+			p Aplicaciones web para Guild Wars 2. ¡Disfruten!
+		
+		nav(class="home_nav")
+		ul
+			li
+				a(href="/wvw") Mapa WvW
+		footer
+			p Se siguen desarrollando más herramientas y mejorando las que ya hay.<br> Y no olviden 
+				a(href="mailto:undakel@gmail.com") enviarnos  
+				| vuestros comentarios.
