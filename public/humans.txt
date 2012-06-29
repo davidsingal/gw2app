@@ -1,10 +1,12 @@
 /* TEAM */
   Developer: David Inga
+  Web: http://www.davidsingal.com
   Twitter: @davidsingal
   Location: Madrid, Spain
   
   Georeference: Alicia Arenzana
-  Twitter: @AliGM
+  Web: http://www.alicitita.com
+  Twitter: @AliyGM
   Location: Madrid, Spain
 
 /* THANKS */
