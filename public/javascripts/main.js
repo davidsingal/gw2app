@@ -32,7 +32,8 @@
         map: map,
         user_name: "darkit",
         table_name: "wvw",
-        query: "SELECT cartodb_id, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
+        query: "SELECT cartodb_id, nombre, tipo, descrip, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
+        interactivity: "nombre, tipo, descrip",
         featureOver: function(ev, latlng, pos, data) {
           return document.body.style.cursor = "pointer";
         },
@@ -40,8 +41,20 @@
           return document.body.style.cursor = "default";
         },
         featureClick: function(ev, latlng, pos, data) {
+          var infowindow;
           ev.stopPropagation();
-          popup.setContent(data);
+          infowindow = "<table>";
+          if (data.nombre) {
+            infowindow += "<tr><th>Nombre:</th><td>" + data.nombre + "</td></tr>";
+          }
+          if (data.puntuacion) {
+            infowindow += "<tr><th>Tipo:</th><td>" + data.puntuacion + "</td></tr>";
+          }
+          if (data.descrip) {
+            infowindow += "<tr><th>Descripci�n:</th><td>" + data.descrip + "</td></tr>";
+          }
+          infowindow += "</table>";
+          popup.setContent(infowindow);
           popup.setLatLng(latlng);
           return map.openPopup(popup);
         },

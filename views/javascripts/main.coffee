@@ -35,27 +35,37 @@ cartoDB =
 			map: map
 			user_name: "darkit"
 			table_name: "wvw"
-			#query: "SELECT * FROM {{table_name}}"
-			query: "SELECT cartodb_id, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}"
-			featureOver: (ev, latlng, pos, data) ->
+			query: "SELECT cartodb_id, nombre, tipo, descrip, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}"
+			interactivity: "nombre, tipo, descrip"
+			featureOver: (ev, latlng, pos, data)->
 				document.body.style.cursor = "pointer"
 			
 			featureOut: ->
 				document.body.style.cursor = "default"
 			
-			featureClick: (ev, latlng, pos, data) ->
+			featureClick: (ev, latlng, pos, data)->
 				ev.stopPropagation()
-				popup.setContent data
+				
+				infowindow = "<table>"
+				if (data.nombre)
+					infowindow += "<tr><th>Nombre:</th><td>" + data.nombre + "</td></tr>"
+				if (data.puntuacion)
+					infowindow += "<tr><th>Tipo:</th><td>" + data.puntuacion + "</td></tr>"
+				if (data.descrip)
+					infowindow += "<tr><th>Descripción:</th><td>" + data.descrip + "</td></tr>"
+				infowindow += "</table>"
+				
+				popup.setContent infowindow
 				popup.setLatLng latlng
 				map.openPopup popup
 			
 			auto_bound: false
 			debug: true
-			
+		
 		map.addLayer wvw
 		
 		#Events
-		map.on "moveend", (e)->
+		#map.on "moveend", (e)->
 			#console.log map.getBounds()
 
 drawCanvas =
@@ -97,7 +107,6 @@ drawCanvas =
 		lastY = 0
 		active = false
 		
-		
 		$(canvas).mousedown (e)->
 			e.preventDefault()
 			paint(e)
@@ -125,12 +134,11 @@ drawCanvas =
 			lastX = e.pageX - canvas.offsetLeft
 			lastY = e.pageY - canvas.offsetTop
 			
-			
-
 
 #Document Ready
 $ ->
 	cartoDB.init()
+
 
 #Window Load
 win.load ->
