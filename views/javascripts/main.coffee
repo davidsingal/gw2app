@@ -37,6 +37,7 @@ cartoDB =
 			table_name: "wvw"
 			query: "SELECT cartodb_id, nombre, tipo, descrip, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}"
 			interactivity: "nombre, tipo, descrip"
+			
 			featureOver: (ev, latlng, pos, data)->
 				document.body.style.cursor = "pointer"
 			

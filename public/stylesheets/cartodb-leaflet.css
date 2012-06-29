@@ -1,10 +1,9 @@
-/*other stuff*/
+/* CartoDB popup
 
 .leaflet-popup-content label {width:100%; margin:0; padding:0; font:bold 12px Arial; color:#333333;}
 .leaflet-popup-content p {width:100%; margin:2px 0 3px!important; padding:0; font:normal 12px Arial; color:#666666;}
 
-/* CartoDB popup*/
-div.cartodb-popup {position:absolute; display:block; width:214px; padding:0; -webkit-transform: translateZ(10000px);/*Hack for Safari*/}
+div.cartodb-popup {position:absolute; display:block; width:214px; padding:0; -webkit-transform: translateZ(10000px);}
 div.cartodb-popup:hover {cursor:default;}
 div.cartodb-popup a.cartodb-popup-close-button {position:absolute; right:3px; top:2px; width:22px; height:15px; padding:4px 0 3px 0; text-align:center; font:bold 15px "Helvetica",Arial; color:#666666; text-decoration:none; line-height:15px; background:none; text-indent:0; overflow:visible}
 div.cartodb-popup a.cartodb-popup-close-button:hover {color:#333333; cursor:pointer}
@@ -19,3 +18,13 @@ div.cartodb-popup div.cartodb-popup-content p.empty {font-weight:normal; font-st
 div.cartodb-popup div.cartodb-popup-tip-container {width:180px; height:36px; padding:11px 16px 10px 10px; margin:0; background:url('/images/assets/infowindow.png') no-repeat right top;}
 div.cartodb-popup div.cartodb-popup-tip-container label {float:left; margin:5px 0 0 3px; font:normal 11px Arial; color:#B3B3B3; text-shadow:0 1px white}
 div.cartodb-popup div.cartodb-popup-tip-container label strong {font:bold 11px 'Helvetica',Arial; color:#666666; text-shadow:0 1px white;}
+*/
+
+.cartodb-popup {position:absolute; display:block; margin: -15px 0 0 -20px; padding:0; -webkit-transform: translateZ(10000px);/*Hack for Safari*/}
+.cartodb-popup-tip-container {height: 15px; background: url(../images/assets/bg_infowindow.png) 41px 0 no-repeat;}
+.cartodb-popup-close-button {position: absolute; right: 5px; top: 0; color: #333; font-size: 15px;}
+.cartodb-popup-close-button:hover {text-decoration: none;}
+.cartodb-popup-content {width: 140px !important; padding: 15px; background: #fcfcfc;}
+.cartodb-popup-content table {font-size: 13px;}
+.cartodb-popup-content td, .cartodb-popup-content th {vertical-align: top;}
+.cartodb-popup-content td {padding-left: 5px;}

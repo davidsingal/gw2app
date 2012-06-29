@@ -20,7 +20,7 @@ a:focus{outline:none}
 .full_map #cartodb_logo{z-index:1400}
 .draw_canvas{position:absolute;display:none;top:32px;left:0;background:url("/images/assets/bg_canvas.png");z-index:1500}
 .main_footer{position:absolute;right:0;left:0;bottom:0;font-size:1.3em;text-align:center;color:#fefefe;z-index:1000;}
-.main_footer p{margin:.5em 0}
+.main_footer p{position:absolute;left:47%;bottom:0;margin:.5em 0}
 .main_footer a{color:#fefefe;text-shadow:1px 1px 3px #222}
 .home .main_header{display:none}
 .home .welcome{position:relative;top:150px;left:50px;width:35%;min-height:400px;}

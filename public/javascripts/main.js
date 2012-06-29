@@ -61,8 +61,7 @@
         auto_bound: false,
         debug: true
       });
-      map.addLayer(wvw);
-      return map.on("moveend", function(e) {});
+      return map.addLayer(wvw);
     }
   };
 
