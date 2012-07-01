@@ -17,9 +17,9 @@ block content
 	div(id="map", class="full_map")
 	div(id="tools", class="tools_map")
 		button(class="icon", id="ram", data-dist="5", data-colour="magenta") Ariete
-		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") Flechas
-		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") Balista
 		button(class="icon", id="catapult", data-dist="30", data-colour="orange") Catapulta
+		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") Balista
+		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") Flechas
 		button(class="icon", id="trebuchet", data-dist="180", data-colour="red") Trebuchet
 	canvas(id="canvas", class="draw_canvas", width="1000px", height="500px")
 		p(class="disclaimer") Parece que tu navegador no soporta Canvas, prueba con Chrome :)
@@ -28,7 +28,6 @@ block javascripts
 	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
 	script
 		window.jQuery || document.write("<script src=\"js/libs/jquery-1.7.1.min.js\"><\\/script>")
-	script(src="/javascripts/vendor/jquery-ui-1.8.21.custom.min.js")
 	script(src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js")
 	script(src="/javascripts/vendor/wax.leaf.min-6.2.3-touched.js")
 	script(src="/javascripts/vendor/cartodb-leaflet-min.js")
