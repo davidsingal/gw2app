@@ -40,6 +40,11 @@ body
 	background whiteColor url(/images/assets/bg.jpg) top no-repeat
 	background-size cover
 	
+::-moz-selection
+	background blackColor
+::selection
+	background blackColor
+	
 a:link, a:visited, a:active
 	color redColor
 	text-decoration none
@@ -48,6 +53,17 @@ a:hover
 a:focus
 	outline none
 
+button
+	display block
+	-moz-appearance: none
+	padding 5px 10px
+	font-size 1.3em
+	color whiteColor
+	border none
+	border-radius(3px)
+	background blackColor
+	&.active
+		background-color redColor
 
 //Main Header
 .main_header
@@ -75,7 +91,7 @@ a:focus
 		font-size 1.7em
 		line-height 32px
 		padding-right 20px
-		background url(/images/assets/sprite.png) no-repeat right
+		background url(/images/assets/sprite.png) no-repeat 70px 13px
 		a
 			color blackColor
 	ul
@@ -106,19 +122,42 @@ a:focus
 
 .tools_nav
 	position absolute
-	top 0
+	top 4px
 	right 2em
-	margin 0
-	padding 0
-	list-style none
-	li
-		a
-			display block
-			font-size 1.5em
-			line-height 32px
-			color blackColor
-			&.active
-				color redColor
+	button
+		float left
+		margin-left 5px
+
+.tools_map
+	position absolute
+	display none
+	top 30%
+	right 2em
+	z-index 2000
+	.icon
+		width 100%
+		height 30px
+		padding-left 35px
+		margin-top 5px
+		background blackColor url(/images/assets/sprite.png) no-repeat
+		box-shadow(0 0 5px blackColor)
+		&:hover
+			background-color redColor
+	#ram
+		border-left 3px solid magenta
+		background-position 0 -20px		
+	#ballista
+		border-left 3px solid yellow
+		background-position 0 -90px
+	#catapult
+		border-left 3px solid orange
+		background-position 0 -55px		
+	#arrow
+		border-left 3px solid cyan
+		background-position 0 -125px		
+	#trebuchet
+		border-left 3px solid red
+		background-position 0 -160px
 
 
 //Main Content
