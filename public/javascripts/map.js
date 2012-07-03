@@ -156,12 +156,50 @@
       });
     },
     clickEvent: function() {
-      var circle, circleMove, colour, dist, marker, self;
+      var circle, circleMove, colour, dist, icon, iconOptions, id, marker, self, trebuchetIcon;
       self = $(this);
       colour = self.data("colour");
       dist = self.data("dist");
+      id = self.attr("id");
+      switch (id) {
+        case "trebuchet":
+          iconOptions = {
+            iconUrl: "/images/assets/trebuchet-icon.png",
+            iconSize: new L.Point(30, 26)
+          };
+          break;
+        case "catapult":
+          iconOptions = {
+            iconUrl: "/images/assets/catapult-icon.png",
+            iconSize: new L.Point(30, 27)
+          };
+          break;
+        case "ram":
+          iconOptions = {
+            iconUrl: "/images/assets/ram-icon.png",
+            iconSize: new L.Point(30, 27)
+          };
+          break;
+        case "arrow":
+          iconOptions = {
+            iconUrl: "/images/assets/arrow-icon.png",
+            iconSize: new L.Point(30, 27)
+          };
+          break;
+        case "ballista":
+          iconOptions = {
+            iconUrl: "/images/assets/ballista-icon.png",
+            iconSize: new L.Point(30, 27)
+          };
+          break;
+        default:
+          iconOptions = {};
+      }
+      trebuchetIcon = L.Icon.extend(iconOptions);
+      icon = new trebuchetIcon();
       marker = new L.Marker(map.getCenter(), {
-        draggable: true
+        draggable: true,
+        icon: icon
       });
       circle = new L.Circle(marker.getLatLng(), dist, {
         color: colour,

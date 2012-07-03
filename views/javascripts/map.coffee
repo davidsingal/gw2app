@@ -145,13 +145,46 @@ siegeTools =
 	
 	clickEvent: ->
 		self = $(@)
-		colour = self.data("colour")
-		dist = self.data("dist")
+		colour = self.data "colour"
+		dist = self.data "dist"
+		id = self.attr "id"
+		
+		switch id
+			when "trebuchet"
+				iconOptions =
+					iconUrl: "/images/assets/trebuchet-icon.png"
+					iconSize: new L.Point 30, 26 
+			when "catapult"
+				iconOptions =
+					iconUrl: "/images/assets/catapult-icon.png"
+					iconSize: new L.Point 30, 27
+			when "ram"
+				iconOptions =
+					iconUrl: "/images/assets/ram-icon.png"
+					iconSize: new L.Point 30, 27
+			when "arrow"
+				iconOptions =
+					iconUrl: "/images/assets/arrow-icon.png"
+					iconSize: new L.Point 30, 27
+			when "ballista"
+				iconOptions =
+					iconUrl: "/images/assets/ballista-icon.png"
+					iconSize: new L.Point 30, 27
+			else
+				iconOptions = {}
+		
+		trebuchetIcon = L.Icon.extend iconOptions
+			
+		icon = new trebuchetIcon()
+		
 		marker = new L.Marker map.getCenter(), 
-			draggable: true				
+			draggable: true
+			icon: icon
+			
 		circle = new L.Circle marker.getLatLng(), dist, 
 			color: colour
 			weight: 3
+			
 		circleMove = ->
 			circle.setLatLng marker.getLatLng()
 			
