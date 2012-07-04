@@ -31,7 +31,7 @@ button.active{background-color:#ff4000}
 .full_map{position:absolute;top:32px;left:0;width:100%;height:100%;}
 .full_map #cartodb_logo{z-index:1400}
 .draw_canvas{position:absolute;display:none;top:32px;left:0;background:url("/images/assets/bg_canvas.png");z-index:1500}
-.main_footer{position:absolute;right:0;left:0;bottom:0;font-size:1.3em;text-align:center;color:#fefefe;z-index:1000;}
+.main_footer{position:absolute;right:0;left:0;bottom:0;font-size:1.4em;text-align:center;color:#fefefe;z-index:1000;}
 .main_footer p{position:absolute;left:47%;bottom:0;margin:.5em 0}
 .main_footer a{color:#fefefe;text-shadow:1px 1px 3px #222}
 .home .main_header{display:none}
@@ -41,5 +41,6 @@ button.active{background-color:#ff4000}
 .home .welcome .big{font-size:3.5em;margin:0}
 .home .welcome p{font-size:2.1em;margin:.2em 0}
 .home .welcome footer p{font-size:1.5em}
+.home .welcome footer .tooltip_licence{width:80%;font-size:1.2em;margin-top:50px}
+.home .main_footer{color:#222;}
 .home .main_footer a{color:#222;text-shadow:1px 1px 3px #fefefe}
-.disclaimer{position:absolute;top:45%;left:50%;width:300px;margin-left:-150px;padding:.2em .7em;color:#fefefe;background:#222}
