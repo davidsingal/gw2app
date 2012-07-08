@@ -1,0 +1,23 @@
+*{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+body{font-size:62.5%;font-family:Helvetica,Arial,sans-serif}
+::-moz-selection{background-color:#dc241f}
+::selection{background-color:#dc241f}
+a:link,a:visited,a:active{color:#333;text-decoration:none}
+a:hover{color:#dc241f;text-decoration:underline}
+a:focus{outline:none}
+.logo{position:absolute;width:120px;height:20px;margin:0;top:10px;left:20px;z-index:5;}
+.logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat 5px -20px}
+.lang_nav{position:absolute;top:10px;right:20px;margin:0;list-style:none;z-index:5;}
+.lang_nav li{display:inline}
+.lang_nav a{float:left;display:block;margin-left:10px;font-size:1.2em}
+.home_nav{position:absolute;top:30%;left:50%;margin-left:-125px;z-index:3;}
+.home_nav a{display:block;width:250px;padding:15px 10px;text-align:center;border:1px solid #ccc;background:#eee;text-shadow:1px 1px 0 #fff;font-size:1.4em;}
+.home_nav a:hover{color:#fff;text-decoration:none;background:#dc241f;border-color:#530406;text-shadow:1px 1px 0 #530406}
+.main_content{position:absolute;width:100%;height:100%;background:url("/images/home/norn-bg.jpg") no-repeat bottom;background-size:100%;}
+.main_content .layer1{position:absolute;width:100%;height:200px;bottom:0;background:url("/images/home/norn-2.png") no-repeat 0 300%;background-size:100%;z-index:2;}
+.main_content .layer1.active,.main_content .layer1:hover{background-position:0 bottom;-webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
+.main_content .layer2{position:absolute;right:0;bottom:0;width:500px;height:490px;background:url("/images/home/norn-1.png") no-repeat 500px bottom;background-size:100%;z-index:1;}
+.main_content .layer2.active,.main_content .layer2:hover{background-position:0 bottom;-webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
+.main_footer{position:absolute;bottom:0;width:100%;text-align:center;z-index:5;}
+.main_footer a{font-size:1.2em;color:#eee;text-shadow:0 0 5px #333;}
+.main_footer a:hover{color:#dc241f}

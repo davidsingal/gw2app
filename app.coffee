@@ -6,6 +6,7 @@ routes = require "./routes"
 
 publicPath = __dirname + "/public"
 viewsPath = __dirname + "/views"
+assetsPath = __dirname + "/assets"
 
 app = module.exports = express.createServer()
 
@@ -22,14 +23,14 @@ app.configure ->
 	app.use stylus.middleware
 		debug: true
 		force: true
-		src: viewsPath
+		src: assetsPath
 		dest: publicPath
 		compile: (str, path) ->
-			stylus(str).set("filename", path).set("compress", true)
+			stylus(str).set("filename", path).set "compress", true
 	app.use express.compiler
-		src: viewsPath
+		src: assetsPath
 		dest: publicPath
-		enable: ['coffeescript']
+		enable: ["coffeescript"]
 	app.use express.static publicPath
 
 app.configure "development", ->

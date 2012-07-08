@@ -2,10 +2,7 @@
 html(lang="es")
 	head
 		meta(charset="utf-8")
-		if title == "GW2 App"
-			title= "Bienvenido | GW2 App"
-		else
-			title= title + " | GW2 App"
+		title= title + " | GW2 App"
 		meta(name="description", content=desc)
 		
 		//Mobile
@@ -15,21 +12,26 @@ html(lang="es")
 		//CSS
 		link(rel="stylesheet", href="/stylesheets/normalize.css")
 		block stylesheets
-		link(rel="stylesheet", href="/stylesheets/main.css")
 		
 		//Modernizr
 		script(src="/javascripts/vendor/modernizr-2.5.3.min.js")
+
 	body(class= bodyclass)
 		header(class="main_header")
 			block header
-				h1= title
-				nav(class="main_nav")
-					h1
-						a(href="/") GW2 App
-					ul
-						li 
-							a(href="/wvw") Mapa WvW
-		
+				h1(class="logo")
+					a(href="http://www.gw2app.com") GW2 App
+				block navigation
+					nav(class="main_nav")
+						ul
+							li 
+								a(href="/wvw") Mapa de Mundo contra Mundo (WvW)
+				ul(class="lang_nav")
+					li
+						a(href="/es") Español
+					li
+						a(href="/en") English
+
 		div(role="main", class="main_content")
 			block content
 		
@@ -38,11 +40,14 @@ html(lang="es")
 				p
 					a(href="http://twitter.com/gw2app", target="_blank") @GW2App
 					|  · 
-					a(href="mailto:undakel@gmail.com") Feedback
+					a(href="mailto:undakel@gmail.com") Contacto
 					|  · 
 					a(href="https://github.com/davidsingal/gw2app", target="_blank") Colabora
 		
 		//Scripts
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+		script
+			window.jQuery || document.write("<script src=\"js/libs/jquery-1.7.1.min.js\"><\\/script>")
 		block javascripts
 		script
 			var _gaq=[['_setAccount','UA-32899153-1'],['_trackPageview']];
