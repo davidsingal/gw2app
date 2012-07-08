@@ -28,3 +28,5 @@ div.cartodb-popup div.cartodb-popup-tip-container label strong {font:bold 11px '
 .cartodb-popup-content p {font-size: 15px; line-height: 1.1; margin: .2em 0;}
 .cartodb-popup-content .score {color: #f00;}
 .cartodb-popup-content .descrip {font-size: 13px;}
+
+.leaflet-top .leaflet-control {margin-top: 50px}

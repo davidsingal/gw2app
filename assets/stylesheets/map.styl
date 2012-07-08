@@ -2,7 +2,8 @@
 blackColor = #222
 whiteColor = #fefefe
 greyColor = #666
-redColor = #ff4000
+redColor = #dc241f
+blackRedColor = #530406
 
 
 //Mixins
@@ -21,21 +22,17 @@ transition()
 	-moz-transition arguments
 	transition arguments
 
+sprite(x, y)
+	background url(/images/assets/sprite.png) no-repeat x y
+
+
+*
+	transition(all .3s ease-in-out)
 
 //Main Styles
-@font-face
-	font-family "CronosRegular"
-	src url(/fonts/cronos_display-webfont.eot)
-	src url(/fonts/cronos_display-webfont.eot?#iefix) format("embedded-opentype"),
-		url(/fonts/cronos_display-webfont.woff) format("woff"),
-		url(/fonts/cronos_display-webfont.ttf) format("truetype"),
-		url(/fonts/cronos_display-webfont.svg#CronosRegular) format("svg")
-	font-weight normal
-	font-style normal
-
 body
 	font-size 62.5%
-	font-family "CronosRegular", Helvetica, Arial, sans-serif
+	font-family Helvetica, Arial, sans-serif
 	color blackColor
 	background whiteColor url(/images/assets/bg.jpg) top no-repeat
 	background-size cover
@@ -68,67 +65,62 @@ button
 		background-color redColor
 
 //Main Header
-.main_header
-	position absolute
-	top 0
-	left 0
-	right 0
-	height 32px
-	color blackColor
-	box-shadow(0 0 7px blackColor)
-	background whiteColor
-	z-index 1000
+.main_header	
 	h1
 		text-align center
 		margin 0
 		font-size 2.3em
 		font-weight normal
 
+.logo
+	position absolute
+	top 5px
+	left 15px
+	width 110px
+	height 30px
+	margin 0	
+	z-index 2000
+	a
+		display block
+		width 100%
+		height 100%
+		color transparent
+		text-indent -9999px
+		sprite(0px, -45px)
+
 .main_nav
 	position absolute
-	left 1.5em
-	top 0
-	h1
-		margin 0 .5em
-		font-size 1.7em
-		line-height 32px
-		padding-right 20px
-		background url(/images/assets/sprite.png) no-repeat 70px 13px
-		a
-			color blackColor
-	ul
-		position absolute
-		display none
-		width 100%
-		top 32px
-		opacity 0
-		transition(opacity .3s ease-in-out)
+	display none
+	left 30px
+	top 10px
+	z-index 2000
+
+.lang_nav
+	position absolute
+	display none //Temporal
+	top 10px
+	right 15px
+	margin 0
+	list-style none
+	z-index 5
 	li
-		a
-			display block
-			padding .2em .5em
-			border-bottom 1px solid greyColor
-			font-size 1.5em
-			text-align center
-			color whiteColor
-			background blackColor
-			&:hover
-				text-decoration none
-				background redColor
-		&:last-child a
-			border-bottom 0
-	&:hover	ul
+		display inline
+	a
+		float left
 		display block
-		opacity 1
-		transition(opacity .3s ease-in-out)
+		margin-left 10px
+		font-size 1.2em
 
 .tools_nav
 	position absolute
-	top 4px
-	right 2em
+	top 10px
+	right 20px
+	z-index 2000
 	button
 		float left
 		margin-left 5px
+		&:hover
+			background redColor
 
 .tools_map
 	position absolute
@@ -147,25 +139,24 @@ button
 			background-color redColor
 	#ram
 		border-left 3px solid magenta
-		background-position 0 -20px		
+		background-position -5px -80px		
 	#ballista
 		border-left 3px solid yellow
-		background-position 0 -90px
+		background-position -5px -115px
 	#catapult
 		border-left 3px solid orange
-		background-position 0 -55px		
+		background-position -5px -185px		
 	#arrow
 		border-left 3px solid cyan
-		background-position 0 -125px		
+		background-position -5px -150px		
 	#trebuchet
 		border-left 3px solid red
-		background-position 0 -160px
+		background-position -5px -220px
 
 
 //Main Content
 .full_map
 	position absolute
-	top 32px
 	left 0
 	width 100%
 	height 100%
@@ -175,7 +166,6 @@ button
 .draw_canvas
 	position absolute
 	display none
-	top 32px
 	left 0
 	background url(/images/assets/bg_canvas.png)
 	z-index 1500
@@ -199,43 +189,3 @@ button
 	a
 		color whiteColor
 		text-shadow 1px 1px 3px blackColor
-
-
-//Home
-.home
-	.main_header
-		display none
-	.welcome
-		position relative
-		top 150px
-		left 50px
-		width 35%
-		min-height 400px
-		ul
-			margin 2.5em 0
-			padding-left 30px
-			list-style disc
-		li a
-			font-size 1.7em
-		.big
-			font-size 3.5em
-			margin 0
-		p
-			font-size 2.1em
-			margin .2em 0
-		footer
-			p
-				font-size 1.5em
-			.tooltip_licence
-				width 80%
-				font-size 1.2em
-				margin-top 50px
-	.main_footer
-		color blackColor
-		a
-			color blackColor
-			text-shadow 1px 1px 3px whiteColor
-
-
-//Helpers
-

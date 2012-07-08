@@ -7,12 +7,6 @@
 
   cartoDB = {
     init: function() {
-      return this.size();
-    },
-    size: function() {
-      return $("div#map").css("height", win.height() - 32);
-    },
-    launch: function() {
       var bounds, northEast, popup, southWest, tiles, wvw;
       southWest = new L.LatLng(-0.033179, -0.000004);
       northEast = new L.LatLng(0.000004, 0.0477410);
@@ -78,7 +72,7 @@
       var canvas;
       canvas = this.canvas;
       canvas.width = win.width();
-      return canvas.height = win.height() - 32;
+      return canvas.height = win.height();
     },
     showCanvas: function() {
       var canvas;
@@ -97,7 +91,7 @@
       canvas = this.canvas;
       canvas = document.getElementById("canvas");
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight - 32;
+      canvas.height = window.innerHeight;
       context = canvas.getContext("2d");
       context.scale(1, 1);
       context.strokeStyle = "#000000";
@@ -218,12 +212,8 @@
     }
   };
 
-  $(function() {
-    return cartoDB.init();
-  });
-
   win.load(function() {
-    cartoDB.launch();
+    cartoDB.init();
     drawCanvas.size();
     drawCanvas.init();
     return siegeTools.init();

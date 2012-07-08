@@ -5,12 +5,6 @@ map = null
 #Functions
 cartoDB =
 	init: ->
-		@.size()
-		
-	size: ->
-		$("div#map").css "height", win.height() - 32
-		
-	launch: ->
 		southWest = new L.LatLng -0.033179, -0.000004
 		northEast = new L.LatLng 0.000004, 0.0477410
 		
@@ -76,7 +70,7 @@ drawCanvas =
 	size: ->
 		canvas = @.canvas
 		canvas.width = win.width()
-		canvas.height = win.height() - 32
+		canvas.height = win.height()
 		
 	showCanvas: ->
 		canvas = @.canvas
@@ -90,7 +84,7 @@ drawCanvas =
 		canvas = @.canvas
 		canvas = document.getElementById "canvas"
 		canvas.width = window.innerWidth
-		canvas.height = window.innerHeight - 32
+		canvas.height = window.innerHeight
 		context = canvas.getContext "2d"
 		context.scale 1, 1
 		context.strokeStyle = "#000000"
@@ -195,16 +189,10 @@ siegeTools =
 		
 		map.addLayer marker
 		map.addLayer circle
-					
-
-#Document Ready
-$ ->
-	cartoDB.init()
-
 
 #Window Load
 win.load ->
-	cartoDB.launch()
+	cartoDB.init()
 	drawCanvas.size()
 	drawCanvas.init()
 	siegeTools.init()
