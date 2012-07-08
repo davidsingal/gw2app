@@ -220,7 +220,7 @@
   });
 
   win.resize(function() {
-    return cartoDB.size();
+    return drawCanvas.size();
   });
 
 }).call(this);
