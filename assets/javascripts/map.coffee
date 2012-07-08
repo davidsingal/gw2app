@@ -200,4 +200,4 @@ win.load ->
 	
 #Window Resize
 win.resize ->
-	cartoDB.size()
+	drawCanvas.size()
