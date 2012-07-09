@@ -8,9 +8,6 @@ transition()
 	-webkit-transition arguments
 	-moz-transition arguments
 	transition arguments
-	
-*
-	transition(all .3s ease-in-out)
 
 body
 	font-size 62.5%
@@ -83,6 +80,7 @@ a:focus
 			background redColor
 			border-color blackRedColor
 			text-shadow 1px 1px 0 blackRedColor
+			transition(all .3s ease-in-out)
 			
 .main_content
 	position absolute
@@ -90,29 +88,30 @@ a:focus
 	height 100%
 	background url(/images/home/norn-bg.jpg) no-repeat bottom
 	background-size 100%
+	overflow hidden
 	.layer1
 		position absolute
 		width 100%
-		height 200px
-		bottom 0
-		background url(/images/home/norn-2.png) no-repeat 0 300%
+		height 30%
+		bottom -30%
+		background url(/images/home/norn-2.png) no-repeat bottom
 		background-size 100%
 		z-index 2
 		&.active
-			background-position 0 bottom
-			transition(all 1s ease-in-out)
+			bottom 0
+			transition(bottom 1s ease-in-out .3s)
 	.layer2
 		position absolute
-		right 0
+		right -500px
 		bottom 0
 		width 500px
-		height 490px
-		background url(/images/home/norn-1.png) no-repeat 500px bottom
+		height 400px
+		background url(/images/home/norn-1.png) no-repeat top
 		background-size 100%
 		z-index 1
 		&.active
-			background-position 0 bottom
-			transition(all 1s ease-in-out)
+			right 0
+			transition(right .7s ease-in-out .7s)
 		
 .main_footer
 	position absolute

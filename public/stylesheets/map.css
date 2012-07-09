@@ -1,4 +1,3 @@
-*{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 body{font-size:62.5%;font-family:Helvetica,Arial,sans-serif;color:#222;background:#fefefe url("/images/assets/bg.jpg") top no-repeat;background-size:cover;}
 body.map{background-image:none}
 ::-moz-selection{background:#222}
@@ -7,7 +6,7 @@ a:link,a:visited,a:active{color:#dc241f;text-decoration:none}
 a:hover{text-decoration:underline}
 a:focus{outline:none}
 button{display:block;-moz-appearance:none;padding:5px 10px;font-size:1.3em;color:#fefefe;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:#222;}
-button.active{background-color:#dc241f}
+button.active{background-color:#dc241f;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .main_header h1{text-align:center;margin:0;font-size:2.3em;font-weight:normal}
 .logo{position:absolute;top:5px;left:15px;width:110px;height:30px;margin:0;z-index:2000;}
 .logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat 0 -45px}
@@ -17,7 +16,7 @@ button.active{background-color:#dc241f}
 .lang_nav a{float:left;display:block;margin-left:10px;font-size:1.2em}
 .tools_nav{position:absolute;top:10px;right:20px;z-index:2000;}
 .tools_nav button{float:left;margin-left:5px;}
-.tools_nav button:hover{background:#dc241f}
+.tools_nav button:hover{background:#dc241f;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .tools_map{position:absolute;display:none;top:30%;right:2em;z-index:2000;}
 .tools_map .icon{width:100%;height:30px;padding-left:35px;margin-top:5px;background:#222 url("/images/assets/sprite.png") no-repeat;-webkit-box-shadow:0 0 5px #222;-moz-box-shadow:0 0 5px #222;box-shadow:0 0 5px #222;}
 .tools_map .icon:hover{background-color:#dc241f}

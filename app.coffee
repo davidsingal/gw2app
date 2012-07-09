@@ -8,6 +8,7 @@ publicPath = __dirname + "/public"
 viewsPath = __dirname + "/views"
 assetsPath = __dirname + "/assets"
 
+
 app = module.exports = express.createServer()
 
 
@@ -33,10 +34,12 @@ app.configure ->
 		enable: ["coffeescript"]
 	app.use express.static publicPath
 
+
 app.configure "development", ->
 	app.use express.errorHandler
 		dumpExceptions: true
 		showStack: true
+
 
 app.configure "production", ->
 	app.use express.errorHandler()
@@ -45,6 +48,8 @@ app.configure "production", ->
 #Routes
 app.get "/", routes.index
 app.get "/wvw", routes.wvw
+app.get "/wvw/canal/1", routes.wvw
+
 
 app.listen 3000, ->
 	console.log "Express server listening on port %d in %s mode", app.address().port, app.settings.env

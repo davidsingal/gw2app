@@ -2,6 +2,7 @@
 win = $(window)
 map = null
 
+
 #Functions
 cartoDB =
 	init: ->
@@ -189,6 +190,7 @@ siegeTools =
 		
 		map.addLayer marker
 		map.addLayer circle
+
 
 #Window Load
 win.load ->
