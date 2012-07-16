@@ -2,7 +2,7 @@
 html(lang="es")
 	head
 		meta(charset="utf-8")
-		title= title + " | GW2 App"
+		title #{title} | GW2 App
 		meta(name="description", content=desc)
 		
 		//Mobile
@@ -25,12 +25,12 @@ html(lang="es")
 					nav(class="main_nav")
 						ul
 							li 
-								a(href="/wvw") Mapa de Mundo contra Mundo (WvW)
+								a(href="/wvw") #{lingua.wvw}
 				ul(class="lang_nav")
 					li
-						a(href="/es") Español
+						a(href="?language=es") Español
 					li
-						a(href="/en") English
+						a(href="?language=en") English
 
 		div(role="main", class="main_content")
 			block content
@@ -40,9 +40,9 @@ html(lang="es")
 				p
 					a(href="http://twitter.com/gw2app", target="_blank") @GW2App
 					|  · 
-					a(href="mailto:undakel@gmail.com") Contacto
+					a(href="mailto:undakel@gmail.com") #{lingua.contact}
 					|  · 
-					a(href="https://github.com/davidsingal/gw2app", target="_blank") Colabora
+					a(href="https://github.com/davidsingal/gw2app", target="_blank") #{lingua.colaborate}
 		
 		//Scripts
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")

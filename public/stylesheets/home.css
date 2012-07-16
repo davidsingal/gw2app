@@ -6,7 +6,7 @@ a:hover{color:#dc241f;text-decoration:underline}
 a:focus{outline:none}
 .logo{position:absolute;width:100px;height:20px;margin:0;top:10px;left:20px;z-index:5;}
 .logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat -5px -20px}
-.lang_nav{position:absolute;display:none;top:10px;right:20px;margin:0;list-style:none;z-index:5;}
+.lang_nav{position:absolute;top:10px;right:20px;margin:0;list-style:none;z-index:5;}
 .lang_nav li{display:inline}
 .lang_nav a{float:left;display:block;margin-left:10px;font-size:1.2em}
 .home_nav{position:absolute;top:30%;left:50%;margin-left:-125px;z-index:3;}
@@ -17,5 +17,5 @@ a:focus{outline:none}
 .main_content .layer1.active{bottom:0;-webkit-transition:bottom 1s ease-in-out .3s;-moz-transition:bottom 1s ease-in-out .3s;transition:bottom 1s ease-in-out .3s}
 .main_content .layer2{position:absolute;right:-500px;bottom:0;width:500px;height:400px;background:url("/images/home/norn-1.png") no-repeat top;background-size:100%;z-index:1;}
 .main_content .layer2.active{right:0;-webkit-transition:right .7s ease-in-out .7s;-moz-transition:right .7s ease-in-out .7s;transition:right .7s ease-in-out .7s}
-.main_footer{position:absolute;bottom:0;width:100%;text-align:center;z-index:5;}
+.main_footer{position:absolute;bottom:0;width:100%;text-align:center;color:#eee;z-index:5;}
 .main_footer a{font-size:1.2em;color:#eee;text-shadow:0 0 5px #333}

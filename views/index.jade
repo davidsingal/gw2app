@@ -9,9 +9,10 @@ block content
 	nav(class="home_nav")
 		ul
 			li 
-				a(href="/wvw") Mapa de Mundo contra Mundo (WvW)
+				a(href="/wvw") #{lingua.wvw}
 	div(class="layer1")
 	div(class="layer2")
 
 block javascripts
+	script(src="socket.io/socket.io.js")
 	script(src="/javascripts/home.js")

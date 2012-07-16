@@ -11,19 +11,19 @@ block viewport
 	
 append header
 	div(class="tools_nav")
-		button(href="#draw", id="drawButton") Dibujar
-		button(href="#tools", id="toolsButton") Armas de asedio
+		button(href="#draw", id="drawButton") #{lingua.draw}
+		button(href="#tools", id="toolsButton") #{lingua.siege_weapons}
 
 block content
 	div(id="map", class="full_map")
 	div(id="tools", class="tools_map")
-		button(class="icon", id="ram", data-dist="5", data-colour="magenta") Ariete
-		button(class="icon", id="catapult", data-dist="30", data-colour="orange") Catapulta
-		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") Balista
-		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") Flechas
-		button(class="icon", id="trebuchet", data-dist="180", data-colour="red") Trebuchet
+		button(class="icon", id="ram", data-dist="5", data-colour="magenta") #{lingua.flame_ram}
+		button(class="icon", id="catapult", data-dist="30", data-colour="orange") #{lingua.catapult}
+		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") #{lingua.ballista}
+		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") #{lingua.arrow_cart}
+		button(class="icon", id="trebuchet", data-dist="180", data-colour="red") #{lingua.trebuchet}
 	canvas(id="canvas", class="draw_canvas", width="1000px", height="500px")
-		p(class="disclaimer") Parece que tu navegador no soporta Canvas, prueba con Chrome :)
+		p(class="disclaimer") #{lingua.no_canvas}
 	
 block javascripts
 	script(src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js")
