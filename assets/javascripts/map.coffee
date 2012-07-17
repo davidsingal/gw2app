@@ -31,6 +31,7 @@ cartoDB =
 			user_name: "darkit"
 			table_name: "wvw"
 			query: "SELECT cartodb_id, name, type, descrip, score, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}"
+			
 			interactivity: "name, type, descrip, score"
 			
 			featureOver: (ev, latlng, pos, data)->
