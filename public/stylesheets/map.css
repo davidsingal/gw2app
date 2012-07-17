@@ -9,7 +9,7 @@ button{display:block;-moz-appearance:none;padding:5px 10px;font-size:1.3em;color
 button.active{background-color:#dc241f;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .main_header h1{text-align:center;margin:0;font-size:2.3em;font-weight:normal}
 .logo{position:absolute;top:5px;left:15px;width:110px;height:30px;margin:0;z-index:2000;}
-.logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat 0 -45px}
+.logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat 0 -46px}
 .main_nav{position:absolute;display:none;left:30px;top:10px;z-index:2000}
 .lang_nav{position:absolute;display:none;top:10px;right:15px;margin:0;list-style:none;z-index:5;}
 .lang_nav li{display:inline}
