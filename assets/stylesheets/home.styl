@@ -1,3 +1,4 @@
+lightRedColor = #ef0c12
 redColor = #dc241f
 blackRedColor = #530406
 
@@ -9,10 +10,21 @@ transition()
 	-moz-transition arguments
 	transition arguments
 
+border-radius()
+	-webkit-border-radius arguments
+	-moz-border-radius arguments
+	border-radius arguments
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	box-shadow arguments
+
+
 body
 	min-width 320px
 	font-size 62.5%
-	font-family Helvetica, Arial, sans-serif
+	font-family "Droid Sans", Helvetica, Arial, sans-serif
 	
 ::-moz-selection
 	background-color redColor
@@ -63,23 +75,22 @@ a:focus
 	position absolute
 	top 30%
 	left 50%
-	margin-left -125px
+	margin-left -140px
 	z-index 3
 	a
 		display block
-		width 250px
-		padding 15px 10px
+		width 280px
+		padding 12px 10px
 		text-align center
-		border 1px solid #ccc
-		background #eee
-		text-shadow 1px 1px 0 white
+		color white
 		font-size 1.4em
+		text-shadow 2px 2px 0 black
+		background #333
+		border-radius(4px)
 		&:hover
-			color white
 			text-decoration none
-			background redColor
-			border-color blackRedColor
-			text-shadow 1px 1px 0 blackRedColor
+			background-color redColor
+			text-shadow 0 0 20px blackRedColor
 			transition(all .3s ease-in-out)
 			
 .main_content
