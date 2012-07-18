@@ -28,8 +28,8 @@
         map: map,
         user_name: "darkit",
         table_name: "wvw",
-        query: "SELECT cartodb_id, name, type, descrip, score, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
-        interactivity: "name, type, descrip, score",
+        query: "SELECT cartodb_id, name_" + lang + ", type, descrip_" + lang + ", score, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
+        interactivity: "name_" + lang + ", type, descrip_" + lang + ", score",
         featureOver: function(ev, latlng, pos, data) {
           return document.body.style.cursor = "pointer";
         },
@@ -40,14 +40,14 @@
           var infowindow;
           ev.stopPropagation();
           infowindow = "<table>";
-          if (data.name) {
-            infowindow += "<p><strong>" + data.name + "</strong></p>";
+          if (data["name_" + lang]) {
+            infowindow += "<p><strong>" + data["name_" + lang] + "</strong></p>";
           }
           if (data.score) {
-            infowindow += "<p class=\"score\">" + data.score + " puntos</p>";
+            infowindow += "<p class=\"score\">" + data.score + "</p>";
           }
-          if (data.descrip) {
-            infowindow += "<p class=\"descrip\">" + data.descrip + "</p>";
+          if (data["descrip_" + lang]) {
+            infowindow += "<p class=\"descrip\">" + data["descrip_" + lang] + "</p>";
           }
           infowindow += "</table>";
           popup.setContent(infowindow);

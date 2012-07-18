@@ -4,6 +4,7 @@ exports.index = (req, res)->
 		title: res.lingua.content.welcome
 		desc: "Aplicaciones web para Guild Wars 2, mapa interactivo para Mundo contra Mundo (WvW), dibuja estrategias para tu clan y míralo en tiempo real."
 		bodyclass: "home"
+		lang: res.lingua.locale
 
 # GET WvW page
 exports.wvw = (req, res)->
@@ -12,6 +13,7 @@ exports.wvw = (req, res)->
 		title: res.lingua.content.wvw
 		desc: "Visualiza y elabora estrategias para Mundo vs Mundo (WvW) de Guild Wars 2. Crea tu canal en tiempo real para tu clan."
 		bodyclass: "map"
+		lang: res.lingua.locale
 		
 # Channel page
 exports.channel = (req, res)->
@@ -20,3 +22,4 @@ exports.channel = (req, res)->
 		title: res.lingua.content.channel + " " + req.params.channel + " | " + res.lingua.content.wvw
 		desc: "Visualiza y elabora estrategias para Mundo vs Mundo (WvW) de Guild Wars 2. Crea tu canal en tiempo real para tu clan."
 		bodyclass: "map"
+		lang: res.lingua.locale
