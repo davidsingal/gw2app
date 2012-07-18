@@ -1,4 +1,4 @@
-body{font-size:62.5%;font-family:Helvetica,Arial,sans-serif}
+body{min-width:320px;font-size:62.5%;font-family:Helvetica,Arial,sans-serif}
 ::-moz-selection{background-color:#dc241f}
 ::selection{background-color:#dc241f}
 a:link,a:visited,a:active{color:#333;text-decoration:none}
