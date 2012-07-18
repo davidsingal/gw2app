@@ -1,64 +1,66 @@
 (function() {
-  var cartoDB, drawCanvas, map, siegeTools, win;
+  var canvas, cartoDB, context, drawCanvas, map, siegeTools, win;
 
   win = $(window);
 
   map = null;
 
-  cartoDB = {
-    init: function() {
-      var bounds, northEast, popup, southWest, tiles, wvw;
-      southWest = new L.LatLng(-0.033179, -0.000004);
-      northEast = new L.LatLng(0.000004, 0.0477410);
-      bounds = new L.LatLngBounds(southWest, northEast);
-      tiles = new L.TileLayer("/images/maps/wvw/{z}/{x}/{y}.jpg", {
-        minZoom: 16,
-        maxZoom: 18
-      });
-      map = new L.Map("map", {
-        center: bounds.getCenter(),
-        zoom: 16,
-        minZoom: 16,
-        maxZoom: 18,
-        maxBounds: bounds
-      });
-      map.addLayer(tiles, true);
-      popup = new L.CartoDBPopup();
-      wvw = new L.CartoDBLayer({
-        map: map,
-        user_name: "darkit",
-        table_name: "wvw",
-        query: "SELECT cartodb_id, name_" + lang + ", type, descrip_" + lang + ", score, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
-        interactivity: "name_" + lang + ", type, descrip_" + lang + ", score",
-        featureOver: function(ev, latlng, pos, data) {
-          return document.body.style.cursor = "pointer";
-        },
-        featureOut: function() {
-          return document.body.style.cursor = "default";
-        },
-        featureClick: function(ev, latlng, pos, data) {
-          var infowindow;
-          ev.stopPropagation();
-          infowindow = "<table>";
-          if (data["name_" + lang]) {
-            infowindow += "<p><strong>" + data["name_" + lang] + "</strong></p>";
-          }
-          if (data.score) {
-            infowindow += "<p class=\"score\">" + data.score + "</p>";
-          }
-          if (data["descrip_" + lang]) {
-            infowindow += "<p class=\"descrip\">" + data["descrip_" + lang] + "</p>";
-          }
-          infowindow += "</table>";
-          popup.setContent(infowindow);
-          popup.setLatLng(latlng);
-          return map.openPopup(popup);
-        },
-        auto_bound: false,
-        debug: true
-      });
-      return map.addLayer(wvw);
-    }
+  canvas = null;
+
+  context = null;
+
+  cartoDB = function() {
+    var bounds, northEast, popup, southWest, tiles, wvw;
+    southWest = new L.LatLng(-0.033179, -0.000004);
+    northEast = new L.LatLng(0.000004, 0.0477410);
+    bounds = new L.LatLngBounds(southWest, northEast);
+    tiles = new L.TileLayer("/images/maps/wvw/{z}/{x}/{y}.jpg", {
+      minZoom: 16,
+      maxZoom: 18
+    });
+    map = new L.Map("map", {
+      center: bounds.getCenter(),
+      zoom: 16,
+      minZoom: 16,
+      maxZoom: 18,
+      maxBounds: bounds
+    });
+    map.addLayer(tiles, true);
+    popup = new L.CartoDBPopup();
+    wvw = new L.CartoDBLayer({
+      map: map,
+      user_name: "darkit",
+      table_name: "wvw",
+      query: "SELECT cartodb_id, name_" + lang + ", type, descrip_" + lang + ", score, ST_Transform(ST_Buffer(the_geom,0.001), 3857) as the_geom_webmercator FROM {{table_name}}",
+      interactivity: "name_" + lang + ", type, descrip_" + lang + ", score",
+      featureOver: function(ev, latlng, pos, data) {
+        return document.body.style.cursor = "pointer";
+      },
+      featureOut: function() {
+        return document.body.style.cursor = "default";
+      },
+      featureClick: function(ev, latlng, pos, data) {
+        var infowindow;
+        ev.stopPropagation();
+        infowindow = "<table>";
+        if (data["name_" + lang]) {
+          infowindow += "<p><strong>" + data["name_" + lang] + "</strong></p>";
+        }
+        if (data.score) {
+          infowindow += "<p class=\"score\">" + data.score + "</p>";
+        }
+        if (data["descrip_" + lang]) {
+          infowindow += "<p class=\"descrip\">" + data["descrip_" + lang] + "</p>";
+        }
+        infowindow += "</table>";
+        popup.setContent(infowindow);
+        popup.setLatLng(latlng);
+        return map.openPopup(popup);
+      },
+      auto_bound: false,
+      debug: true
+    });
+    return map.addLayer(wvw);
   };
 
   drawCanvas = {
@@ -66,28 +68,28 @@
     init: function() {
       this.size();
       this.showCanvas();
-      return this.draw();
+      this.draw();
+      return this.tools();
     },
     size: function() {
-      var canvas;
       canvas = this.canvas;
       canvas.width = win.width();
       return canvas.height = win.height();
     },
     showCanvas: function() {
-      var canvas;
       canvas = this.canvas;
       return $("button#drawButton").click(function(e) {
         var self;
         e.preventDefault();
         self = this;
         return $(canvas).stop().fadeToggle(function() {
-          return $(self).toggleClass("active");
+          $(self).toggleClass("active");
+          return $("div#canvasTools").fadeToggle();
         });
       });
     },
     draw: function() {
-      var active, canvas, context, lastX, lastY, paint;
+      var active, lastX, lastY, paint;
       canvas = this.canvas;
       canvas = document.getElementById("canvas");
       canvas.width = window.innerWidth;
@@ -131,6 +133,32 @@
         lastX = e.pageX - canvas.offsetLeft;
         return lastY = e.pageY - canvas.offsetTop;
       };
+    },
+    tools: function() {
+      $("button#white").click(function() {
+        return context.strokeStyle = "white";
+      });
+      $("button#black").click(function() {
+        return context.strokeStyle = "black";
+      });
+      $("button#red").click(function() {
+        return context.strokeStyle = "red";
+      });
+      $("button#cyan").click(function() {
+        return context.strokeStyle = "cyan";
+      });
+      $("button#yellow").click(function() {
+        return context.strokeStyle = "yellow";
+      });
+      $("button#magenta").click(function() {
+        return context.strokeStyle = "magenta";
+      });
+      return $("button#clear").click(function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.strokeStyle = "#000000";
+        context.strokeRect(0, 0, canvas.width, canvas.height);
+        return context.strokeStyle = "#ff0000";
+      });
     }
   };
 
@@ -143,7 +171,7 @@
         var self;
         e.preventDefault();
         self = this;
-        return $("div#tools").stop().fadeToggle(function() {
+        return $("div#mapTools").stop().fadeToggle(function() {
           $(self).toggleClass("active");
           return $("button.icon").click(siegeTools.clickEvent);
         });
@@ -213,7 +241,7 @@
   };
 
   win.load(function() {
-    cartoDB.init();
+    cartoDB();
     drawCanvas.size();
     drawCanvas.init();
     return siegeTools.init();

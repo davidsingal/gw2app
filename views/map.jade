@@ -10,18 +10,26 @@ block viewport
 	meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0")
 	
 append header
-	div(class="tools_nav")
+	div(class="nav_tools")
 		button(href="#draw", id="drawButton") #{lingua.draw}
 		button(href="#tools", id="toolsButton") #{lingua.siege_weapons}
 
 block content
 	div(id="map", class="full_map")
-	div(id="tools", class="tools_map")
+	div(id="mapTools", class="tools")
 		button(class="icon", id="ram", data-dist="5", data-colour="magenta") #{lingua.flame_ram}
 		button(class="icon", id="catapult", data-dist="30", data-colour="orange") #{lingua.catapult}
 		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") #{lingua.ballista}
 		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") #{lingua.arrow_cart}
 		button(class="icon", id="trebuchet", data-dist="180", data-colour="red") #{lingua.trebuchet}
+	div(id="canvasTools", class="tools")
+		button(id="clear") #{lingua.clear}
+		button(id="red") #{lingua.red}
+		button(id="cyan") #{lingua.cyan}
+		button(id="yellow") #{lingua.yellow}
+		button(id="magenta") #{lingua.magenta}
+		button(id="white") #{lingua.white}
+		button(id="black") #{lingua.black}
 	canvas(id="canvas", class="draw_canvas", width="1000px", height="500px")
 		p(class="disclaimer") #{lingua.no_canvas}
 	
