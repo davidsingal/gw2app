@@ -1,8 +1,8 @@
 extends layout
 
 block stylesheets
-	link(rel="stylesheet", href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css")
-	<!--[if lt IE 9]>link(rel="stylesheet", href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.cs")<![endif]-->
+	link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.4.1/leaflet.css")
+	<!--[if lt IE 9]>link(rel="stylesheet", href="http://code.leafletjs.com/leaflet-0.4.0/leaflet.ie.cs")<![endif]-->
 	link(rel="stylesheet", href="/stylesheets/cartodb-leaflet.css")
 	link(rel="stylesheet", href="/stylesheets/map.css")
 
@@ -34,7 +34,7 @@ block content
 		p(class="disclaimer") #{lingua.no_canvas}
 	
 block javascripts
-	script(src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js")
+	script(src="http://cdn.leafletjs.com/leaflet-0.4.1/leaflet.js")
 	script(src="/javascripts/vendor/wax.leaf.min-6.2.3-touched.js")
 	script(src="/javascripts/vendor/cartodb-leaflet-min.js")
 	script(src="/javascripts/vendor/cartodb-popup-min.js")
