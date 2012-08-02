@@ -198,10 +198,8 @@ siegeTools =
 					iconSize: new L.Point 30, 27
 			else
 				iconOptions = {}
-		
-		trebuchetIcon = L.Icon.extend iconOptions
 			
-		icon = new trebuchetIcon()
+		icon = new L.Icon iconOptions
 		
 		marker = new L.Marker map.getCenter(), 
 			draggable: true

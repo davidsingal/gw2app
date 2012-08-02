@@ -178,7 +178,7 @@
       });
     },
     clickEvent: function() {
-      var circle, circleMove, colour, dist, icon, iconOptions, id, marker, self, trebuchetIcon;
+      var circle, circleMove, colour, dist, icon, iconOptions, id, marker, self;
       self = $(this);
       colour = self.data("colour");
       dist = self.data("dist");
@@ -217,8 +217,7 @@
         default:
           iconOptions = {};
       }
-      trebuchetIcon = L.Icon.extend(iconOptions);
-      icon = new trebuchetIcon();
+      icon = new L.Icon(iconOptions);
       marker = new L.Marker(map.getCenter(), {
         draggable: true,
         icon: icon
