@@ -5,17 +5,17 @@ exports.routes = function(app) {
 
 	//Get homepage
 	app.get("/", function(req, res){
-		controllers.home(req, res);
+		return controllers.home(req, res);
 	});
 	
 	//Get Word vs World map
 	app.get("/wvw", function(req, res){
-		controllers.map(req, res);
+		return controllers.map(req, res);
 	});
 	
 	//Get Build builder
-	app.get("/wvw", function(req, res){
-		controllers.build(req, res);
+	app.get("/build", function(req, res){
+		return controllers.build(req, res);
 	});
 	
 };

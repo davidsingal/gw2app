@@ -1,9 +1,9 @@
-.lang_nav {position: absolute; top: 10px; right: 3%; margin: 0; padding: 0; list-style: none; z-index: 5;}
+.lang_nav {position: absolute; top: 10px; right: 2%; margin: 0; padding: 0; list-style: none; z-index: 5;}
 .lang_nav li {display: inline;}
 .lang_nav a {float: left; display: block; margin-left: 15px;}
 
-.main_nav {position: absolute; top: 30%; left: 50%; margin-left: -150px; z-index: 3;}
-.main_nav a {display: block; width: 280px; padding: 12px 10px; margin: 5px 0; text-align: center; color: #fff; font-size: 14px; text-shadow: 2px 2px 0 #000; background: #333; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; transition: all .15s ease-in-out;}
+.main_nav {position: absolute; top: 25%; left: 50%; margin-left: -150px; z-index: 3;}
+.main_nav a {display: block; width: 280px; padding: 12px 10px; margin: 15px 0; text-align: center; color: #fff; font-size: 14px; text-shadow: 2px 2px 0 #000; background: #333; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; transition: all .15s ease-in-out;}
 .main_nav a:hover {background-color: #dc241f; text-shadow: 0 0 20px #530406; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
 
 .main_content {position: absolute; width: 100%; height: 100%; background: url("/images/home/norn-bg.jpg") no-repeat bottom; background-size: 100% auto; overflow: hidden;}

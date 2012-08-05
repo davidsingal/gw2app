@@ -2,6 +2,15 @@ extends templates/layout
 
 block stylesheets
 	link(rel="stylesheet", href="/stylesheets/home.css")
+	
+append header
+	ul(class="lang_nav")
+		li
+			a(href="?language=es") Español
+		li
+			a(href="?language=en") English
+		li
+			a(href="?language=pt") Português
 
 block content
 	div(class="layer1")
