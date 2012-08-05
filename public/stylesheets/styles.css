@@ -61,4 +61,23 @@ input:invalid, textarea:invalid {background-color: #f0dddd;}
 table {border-collapse: collapse; border-spacing: 0;}
 td {vertical-align: top;}
 
-.chromeframe {margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0;}
+
+/* Common styles */
+body {min-width: 320px; color: #333; font-size: 13px; font-family: "Droid Sans", Helvetica, Arial, sans-serif;}
+
+::-moz-selection {background-color: #dc241f;}
+::selection {background-color: #dc241f;}
+
+a:link, a:visited, a:active {color: #333; text-decoration: none; -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; transition: all .15s ease-in-out;}
+a:hover {color: #dc241f;}
+a:focus {outline: none;}
+
+.logo {position: absolute; width: 110px; height: 26px; margin: 0; top: 10px; left: 3%; z-index: 5;}
+.logo a {position: absolute; display: block; width: 100%; height: 100%; color: transparent; text-indent: -9999px; background: url("/images/assets/sprite.png") no-repeat 0 -20px;}
+
+.main_footer {position: absolute; bottom: 0; width: 100%; text-align: center; color: #eee; z-index: 5;}
+.main_footer a {color: #eee; text-shadow: 0 0 5px #333;}
+.main_footer a:hover {color: #fff; text-shadow: 0 0 15px #000;}
+
+
+/* Helpers */

@@ -1,21 +1,13 @@
-body{min-width:320px;font-size:62.5%;font-family:"Droid Sans",Helvetica,Arial,sans-serif}
-::-moz-selection{background-color:#dc241f}
-::selection{background-color:#dc241f}
-a:link,a:visited,a:active{color:#333;text-decoration:none}
-a:hover{color:#dc241f;text-decoration:underline}
-a:focus{outline:none}
-.logo{position:absolute;width:110px;height:26px;margin:0;top:10px;left:20px;z-index:5;}
-.logo a{display:block;width:100%;height:100%;color:transparent;text-indent:-9999px;background:url("/images/assets/sprite.png") no-repeat 0 -20px}
-.lang_nav{position:absolute;top:10px;right:20px;margin:0;list-style:none;z-index:5;}
-.lang_nav li{display:inline}
-.lang_nav a{float:left;display:block;margin-left:10px;font-size:1.2em}
-.home_nav{position:absolute;top:30%;left:50%;margin-left:-140px;z-index:3;}
-.home_nav a{display:block;width:280px;padding:12px 10px;text-align:center;color:#fff;font-size:1.4em;text-shadow:2px 2px 0 #000;background:#333;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
-.home_nav a:hover{text-decoration:none;background-color:#dc241f;text-shadow:0 0 20px #530406;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
-.main_content{position:absolute;width:100%;height:100%;background:url("/images/home/norn-bg.jpg") no-repeat bottom;background-size:100%;overflow:hidden;}
-.main_content .layer1{position:absolute;width:100%;height:30%;bottom:-30%;background:url("/images/home/norn-2.png") no-repeat bottom;background-size:100%;z-index:2;}
-.main_content .layer1.active{bottom:0;-webkit-transition:bottom 1s ease-in-out .3s;-moz-transition:bottom 1s ease-in-out .3s;transition:bottom 1s ease-in-out .3s}
-.main_content .layer2{position:absolute;right:-500px;bottom:0;width:500px;height:400px;background:url("/images/home/norn-1.png") no-repeat top;background-size:100%;z-index:1;}
-.main_content .layer2.active{right:0;-webkit-transition:right .7s ease-in-out .7s;-moz-transition:right .7s ease-in-out .7s;transition:right .7s ease-in-out .7s}
-.main_footer{position:absolute;bottom:0;width:100%;text-align:center;color:#eee;z-index:5;}
-.main_footer a{font-size:1.2em;color:#eee;text-shadow:0 0 5px #333}
+.lang_nav {position: absolute; top: 10px; right: 3%; margin: 0; padding: 0; list-style: none; z-index: 5;}
+.lang_nav li {display: inline;}
+.lang_nav a {float: left; display: block; margin-left: 15px;}
+
+.main_nav {position: absolute; top: 30%; left: 50%; margin-left: -150px; z-index: 3;}
+.main_nav a {display: block; width: 280px; padding: 12px 10px; margin: 5px 0; text-align: center; color: #fff; font-size: 14px; text-shadow: 2px 2px 0 #000; background: #333; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; transition: all .15s ease-in-out;}
+.main_nav a:hover {background-color: #dc241f; text-shadow: 0 0 20px #530406; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+
+.main_content {position: absolute; width: 100%; height: 100%; background: url("/images/home/norn-bg.jpg") no-repeat bottom; background-size: 100% auto; overflow: hidden;}
+.main_content .layer1 {position: absolute; width: 100%; height: 30%; bottom: 0; background: url("/images/home/norn-2.png") no-repeat bottom; background-size: 100% auto; z-index: 2;}
+.main_content .layer1.active {bottom: 0; -webkit-transition: bottom 1s ease-in-out .3s; -moz-transition: bottom 1s ease-in-out .3s; transition: bottom 1s ease-in-out .3s;}
+.main_content .layer2 {position: absolute; right: -70%; bottom: 0; width: 100%; height: 40%; background: url("/images/home/norn-1.png") no-repeat right bottom; background-size: auto 100%; z-index: 1;}
+.main_content .layer2.active {right: 0; -webkit-transition: right .7s ease-in-out .7s; -moz-transition: right .7s ease-in-out .7s; transition: right .7s ease-in-out .7s;}
