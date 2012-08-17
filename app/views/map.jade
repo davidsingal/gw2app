@@ -13,24 +13,27 @@ append header
 		button(href="#tools", id="toolsButton") #{lingua.siege_weapons}
 
 block content
-	div(id="mapTools", class="tools siege_weapons")
-		button(class="icon", id="ram", data-dist="5", data-colour="magenta") #{lingua.flame_ram}
-		button(class="icon", id="catapult", data-dist="30", data-colour="orange") #{lingua.catapult}
-		button(class="icon", id="ballista", data-dist="27", data-colour="yellow") #{lingua.ballista}
-		button(class="icon", id="arrow", data-dist="35", data-colour="cyan") #{lingua.arrow_cart}
-		button(class="icon", id="trebuchet", data-dist="180", data-colour="red") #{lingua.trebuchet}
+	div(id="siegeTools", class="tools siege_weapons")
+		button(class="icon", id="ram", data-dist="5", data-color="magenta") #{lingua.flame_ram}
+		button(class="icon", id="catapult", data-dist="30", data-color="orange") #{lingua.catapult}
+		button(class="icon", id="ballista", data-dist="27", data-color="yellow") #{lingua.ballista}
+		button(class="icon", id="arrow", data-dist="35", data-color="cyan") #{lingua.arrow_cart}
+		button(class="icon", id="trebuchet", data-dist="180", data-color="red") #{lingua.trebuchet}
+		
 	div(id="canvasTools", class="tools draw")
-		button(id="draw") Dibujar
-		button(id="erase") Borrar
-		div(class="select-color")
-			button(id="clear") #{lingua.clear}
-			button(id="red") #{lingua.red}
-			button(id="cyan") #{lingua.cyan}
-			button(id="yellow") #{lingua.yellow}
-			button(id="magenta") #{lingua.magenta}
-			button(id="white") #{lingua.white}
-			button(id="black") #{lingua.black}
+		div(class="color_nav clearfix")
+			button(class="icon active", id="paint", title="") Paint
+			button(class="icon", id="erase", title="") Erase
+			button(class="icon", id="clear", title=lingua.clear) #{lingua.clear}
+		div(class="color_nav clearfix")
+			button(class="color", id="red") #{lingua.red}
+			button(class="color", id="cyan") #{lingua.cyan}
+			button(class="color", id="yellow") #{lingua.yellow}
+			button(class="color", id="magenta") #{lingua.magenta}
+			button(class="color last", id="white") #{lingua.white}
+		
 	div(id="map", class="full_map")
+	
 	canvas(id="canvas", class="draw_canvas", width="1000px", height="500px")
 		p(class="disclaimer") #{lingua.no_canvas}
 	
