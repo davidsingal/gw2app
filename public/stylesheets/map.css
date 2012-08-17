@@ -1,18 +1,21 @@
 body {background: #fefefe url("/images/assets/loading.gif") no-repeat center center;}
 
 button {display: block; -moz-appearance: none; padding: 5px 10px; color: #fefefe; border: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #222;}
-button.active {background-color: #dc241f; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+button.active {background-color: #dc241f;}
 
 .main_nav {position: absolute; display: none; left: 30px; top: 10px; z-index: 2000;}
 
 .nav_tools {position: absolute; top: 12px; right: 2%; z-index: 2000;}
 .nav_tools button {float: left; margin-left: 5px;}
-.nav_tools button:hover {background: #dc241f; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.nav_tools button:hover {background: #dc241f;}
 
-.tools {position: absolute; display: none; top: 30%; right: 2em; z-index: 2000;}
+.tools {position: absolute; display: none; top: 30%; right: 2%; z-index: 2000;}
+.tools.draw {right: auto; left: 2%;}
 .tools button {width: 100%; height: 30px; margin-top: 5px; background-color: #222; -webkit-box-shadow: 0 0 5px #222; -moz-box-shadow: 0 0 5px #222; box-shadow: 0 0 5px #222;}
-.tools button:hover {background-color: #dc241f; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.tools button:hover {background-color: #dc241f;}
 .tools .icon {padding-left: 35px; background-image: url("/images/assets/sprite.png"); background-repeat: no-repeat;}
+.tools .color-icon {padding-left: 10px;}
+
 .tools #ram {border-left: 3px solid #f0f; background-position: -5px -80px;}
 .tools #ballista {border-left: 3px solid #ff0; background-position: -5px -115px;}
 .tools #catapult {border-left: 3px solid #ffa500; background-position: -5px -185px;}
@@ -21,6 +24,21 @@ button.active {background-color: #dc241f; -webkit-transition: all .3s ease-in-ou
 
 .full_map {position: absolute; left: 0; width: 100%; height: 100%;}
 .full_map #cartodb_logo {z-index: 1400;}
-.draw_canvas {position: absolute; display: none; left: 0; background: url("/images/assets/bg_canvas.png"); z-index: 1500;}
+
+.draw_canvas {position: absolute; display: none; left: 0; background: url("/images/assets/bg_canvas.png"); z-index: 1500; cursor: pointer;}
 
 .main_footer a {color: #fefefe; text-shadow: 1px 1px 3px #222;}
+
+
+/* CartoDB popup */
+.cartodb-popup {position:absolute; display:block; margin: 0 0 0 -13px; padding:0; -webkit-transform: translateZ(10000px);/*Hack for Safari*/}
+.cartodb-popup-tip-container {height: 15px; background: url(/images/assets/bg_infowindow.png) 41px 0 no-repeat;}
+.cartodb-popup-close-button {position: absolute; right: 4px; top: 4px; width: 14px; height: 14px; color: transparent; text-indent: -9999px; font-size: 15px; background: url(/images/assets/glyphicons.png) no-repeat -48px -96px; opacity: .5;}
+.cartodb-popup-close-button:hover {opacity: 1;}
+.cartodb-popup-content {width: 150px !important; padding: 10px 15px; background: #fcfcfc;}
+.cartodb-popup-content p {font-size: 15px; line-height: 1.1; margin: .2em 0;}
+.cartodb-popup-content .score {color: #f00;}
+.cartodb-popup-content .descrip {font-size: 13px;}
+
+.leaflet-left {left: 2%; top: 100px;}
+.leaflet-top .leaflet-control {margin-left: 0;}
