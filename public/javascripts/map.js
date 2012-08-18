@@ -258,10 +258,7 @@
 				actionButtons.removeClass("active");
 				$(this).addClass("active");
 				
-				/*
-context.globalCompositeOperation = "destination-out";
-				context.strokeStyle = "rgba(255, 255, 255, 0)";
-*/
+				context.strokeStyle = "rgba(255,255,255,0)";
 			});
 			
 			//Clear

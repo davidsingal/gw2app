@@ -30,6 +30,7 @@ button.active, button:hover {background-color: #dc241f;}
 .color_nav {margin: 10px 0 0 0; padding: 0;}
 .color_nav .color {float: left; width: 15px; height: 15px; padding: 0; margin-top: 0; margin-right: 4px; text-indent: -9999px;}
 .color_nav .color.last {margin-right: 0;}
+.color_nav .color.active {border-color: #dc241f;}
 .color_nav .icon {float: left; width: 27px; height: 27px; padding: 0; margin-right: 5px; text-indent: -9999px;}
 .color#red {background-color: red;}
 .color#cyan {background-color: cyan;}
