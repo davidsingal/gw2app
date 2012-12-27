@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %> | GW2 App</title>
+        <%- stylesheet_link_tag('normalize', 'application') %>
+        <%- csrf_meta_tag() %>
+    </head>
+    <body>
+    	<header class="main_header clearfix">
+	    	<a href="" class="brand">GW2 App</a>
+	    	<nav class="main_nav">
+		    	<ul>
+			    	<li><a href="">New</a></li>
+			    	<li><a href="">Share</a></li>
+		    	</ul>
+	    	</nav>
+    	</header>
+    	
+    	<div class="main_content">
+    		<%- body %>
+    	</div>
+    	
+		<footer>
+			<p><a href="">Colaborate</a></p>
+		</footer>
+		
+		<%- javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', 'application') %>
+    </body>
+</html>
