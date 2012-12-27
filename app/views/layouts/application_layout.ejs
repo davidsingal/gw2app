@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    	<meta charset="utf-8">
         <title><%= title %> | GW2 App</title>
-        <%- stylesheet_link_tag('normalize', 'application') %>
+        <meta name="description" content="<%= description %>">
+        <%- stylesheet_link_tag(
+        	'vendor/normalize',
+        	'http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css',
+        	'application'
+        ) %>
+        <!--[if lte IE 8]>
+        	<%- stylesheet_link_tag('http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css') %>
+        <![endif]-->
+        <!--[if lte IE 9]>
+        	<%- stylesheet_link_tag('http://html5shiv.googlecode.com/svn/trunk/html5.js') %>
+        <![endif]-->
         <%- csrf_meta_tag() %>
     </head>
     <body>
     	<header class="main_header clearfix">
-	    	<a href="" class="brand">GW2 App</a>
+	    	<h1 class="logo"><%- link_to('GW2 App', '/') %></h1>
 	    	<nav class="main_nav">
 		    	<ul>
-			    	<li><a href="">New</a></li>
-			    	<li><a href="">Share</a></li>
+			    	<li><%- link_to('New', '#new') %></li>
+			    	<li><%- link_to('Share', '#share') %></li>
 		    	</ul>
 	    	</nav>
     	</header>
@@ -20,10 +32,17 @@
     		<%- body %>
     	</div>
     	
-		<footer>
-			<p><a href="">Colaborate</a></p>
+		<footer class="main_footer">
+			<p>WvW Map to Guild Wars 2 · <%- link_to('Contact', 'mailto:undakel@gmail.com') %> · <%- link_to('Colaborate', 'https://github.com/davidsingal/gw2app', {target: "_blank"}) %></p>
 		</footer>
 		
-		<%- javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', 'application') %>
+		<%- javascript_include_tag(
+			'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',
+			'http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js',
+			'vendor/wax.leaf',
+			'vendor/cartodb-leaflet',
+			'vendor/cartodb-popup',
+			'application'
+		) %>
     </body>
 </html>
