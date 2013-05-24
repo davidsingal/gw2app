@@ -40,8 +40,8 @@ var EventListView = Backbone.View.extend({
 
 		self.showList()
 
-		setTimeout(function() {
-			self.showList()
+		setInterval(function() {
+			self.showList();
 		}, 10000);
 	},
 	showList: function() {
