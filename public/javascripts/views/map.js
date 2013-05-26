@@ -67,12 +67,10 @@ var MapView = Backbone.View.extend({
 
 		var eventLayer = L.geoJson(geoJSON, {
 			pointToLayer: createMarker,
-			style: function (feature) {
-				//return {color: feature.properties.color};
-			},
 			onEachFeature: function (feature, layer) {
-				//console.log(feature);
-				layer.bindPopup(feature.properties.name);
+				if (feature.properties.status === 'Active') {
+					layer.bindPopup(feature.properties.name);
+				}				
 			}
 		});
 
