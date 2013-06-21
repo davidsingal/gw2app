@@ -15,7 +15,7 @@ var MapView = Backbone.View.extend({
 			//maxBounds: bounds
 		});
 
-		var tiles = L.tileLayer('http://amethyst.gw2stuff.com/resources/images/map/worldmap/{z}_{x}_{y}.jpg');
+		var tiles = L.tileLayer('https://tiles.guildwars2.com/1/1/{z}/{x}/{y}.jpg');
 
 		map.addLayer(tiles);
 
