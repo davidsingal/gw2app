@@ -10,7 +10,7 @@ var MapView = Backbone.View.extend({
 
 		var map = new L.Map(this.id, { 
 			center: [0.26, -27.37],
-			zoom: 4,
+			zoom: 1,
 			maxZoom: 7
 			//maxBounds: bounds
 		});
