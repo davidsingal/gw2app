@@ -1,14 +1,16 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'gw2app'
+set :repo_url, 'git@github.com:davidsingal/gw2app.git'
+
+ask(:password, 'secret')
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
+set :deploy_to, '/var/www/gw2app'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -36,6 +38,15 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 namespace :deploy do
 
+  desc 'Installing and building application'
+  task :assets do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "cd #{current_path} && npm install"
+      execute "cd #{current_path} && bower install"
+      execute "cd #{current_path} && grunt build"
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -44,7 +55,7 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  after :publishing, :assets, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
