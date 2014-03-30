@@ -1,2 +1,9 @@
-node_modules
 .DS_Store
+.sass-cache
+*.log
+
+node_modules
+config/database.json
+public/.tmp
+public/dist
+public/app/vendor

@@ -1,0 +1,21 @@
+extends layout
+
+block header
+  header(class="main_header")
+      div(class="brand_area")
+        a(href="/")
+          img(src="/app/images/assets/logo-gw2app.png")
+      div(class="title_area")
+        h1 Eventos destacados en 
+          span(id="worldName") Bahía de Baruch [ES]
+        button(id="changeWorldBtn") +
+      div(class="sub_nav")
+        ul
+          li
+            a(href="https://github.com/davidsingal/gw2app/", target="_blank") Github
+
+block main
+  div(class="main_content")
+    div(class="world_selector", id="worldSelector")
+    section(class="map_section")
+      div(class="map", id="map")
